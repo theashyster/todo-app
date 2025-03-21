@@ -5,6 +5,7 @@ import Todos from './components/todos';
 import { getTodo, getTodos } from './services/api';
 import { socket } from './services/socket';
 import { ApiResponse } from './types';
+import { APP_URL } from './utils/constants';
 
 function App() {
   const params = useParams();
@@ -91,7 +92,7 @@ function App() {
       <main>
         <h1>TODO app</h1>
         <div hidden={!id}>
-          <a href={todo.parentId ? `/list/${todo.parentId}` : '/'}>Back to parent</a>
+          <a href={todo.parentId ? `${APP_URL}/list/${todo.parentId}` : `${APP_URL}/`}>Back to parent</a>
           <p>Edit item</p>
           <Form todo={todo} updateItem={updateItem} />
         </div>

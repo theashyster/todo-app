@@ -2,6 +2,7 @@
 
 import { deleteTodo, updateTodo } from '../services/api';
 import { ApiResponse } from '../types';
+import { APP_URL } from '../utils/constants';
 
 export default function Todos({
   todos,
@@ -56,7 +57,7 @@ export default function Todos({
       {filteredList.length === 0 && <li className="no-todos">No items found!</li>}
       {filteredList.map((todo) => (
         <li key={todo.id}>
-          <a className={todo.completed ? 'line-through' : ''} href={`/list/${todo.id}`}>
+          <a className={todo.completed ? 'line-through' : ''} href={`${APP_URL}/list/${todo.id}`}>
             {todo.name} <span>{`${getTotalCost([todo])} EUR`}</span>
           </a>
           <button onClick={() => handleDeleteClick(todo.id)}>Delete</button>
