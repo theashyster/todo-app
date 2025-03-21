@@ -1,7 +1,10 @@
 'use server';
 
 import { ApiRequest, ApiResponse } from '../types';
-import { API_URL } from '../utils/constants';
+import { API_PATH, BASE_URL, PROD_URL } from '../utils/constants';
+
+const SERVER_URL = process.env.NODE_ENV === 'production' ? PROD_URL : BASE_URL;
+const API_URL = `${SERVER_URL}${API_PATH}`;
 
 const handleResponse = async (res: Response): Promise<any> => {
   if (res?.ok) {
