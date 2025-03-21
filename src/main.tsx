@@ -6,8 +6,8 @@ import './index.css';
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/list/:id" element={<App />} />
-      <Route path="/" element={<App />} />
+      <Route path="/todo-app/list/:id" element={<App />} />
+      <Route path="/todo-app/" element={<App />} />
     </Routes>
   </BrowserRouter>
 );
