@@ -1,5 +1,3 @@
-'use server';
-
 import { ApiRequest, ApiResponse } from '../types';
 import { API_PATH, BASE_URL, PROD_URL } from '../utils/constants';
 
